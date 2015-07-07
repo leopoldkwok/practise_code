@@ -10,11 +10,12 @@
 		 						 { name: 'thailand1210', title: 'Sun and fun in Thailand', date: '2012-10-15', description: 'We ate entirely too much Thai food and had a great time at the beach'},
 		 						 { name: 'australia1207', title: 'A wedding in Melbourne', date: '2012-07-20', description: 'We went to visit our friends for their wedding in Australia' } ]">
 			
+		 	<p><input type="text" ng-model="searchFor" size="30"/></p>
 		 	<p>
 		 		There are {{ albums.length }} albums available to view.
 		 	</p>
 			<ul>
-				<li ng-repeat="album in albums | filter:'thailand' ">
+				<li ng-repeat="album in albums | filter:searchFor | orderBy: 'date'">
 					{{ album.title }} ({{ album.date }})
 				</li>
 			</ul>
