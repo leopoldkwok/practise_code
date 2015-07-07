@@ -3,6 +3,14 @@
 	<link rel="stylesheet" href="css/bootstrap.css">
 	<script type="text/javascript" src="angular.min.js"></script>
 	<script type="text/javascript" src="bootstrap.min.js"></script>
+	<style type="text/css">
+	.even {
+		color: red;
+	}
+	.odd {
+		color: blue;
+	}
+	</style>
 </head>
 <body style="padding: 50px">
 		<div ng-init="albums = [ { name:'madrid1309', title: 'Weekend in Madrid', date: '2013-09-01', description: 'Fun weekend visting the Capitol of Spain'},
@@ -15,8 +23,8 @@
 		 		There are {{ albums.length }} albums available to view.
 		 	</p>
 			<ul>
-				<li ng-repeat="album in albums | filter:searchFor | orderBy: 'date'">
-					{{ album.title }} ({{ album.date }})
+				<li ng-repeat="album in albums | filter:searchFor | orderBy: 'date'" ng-class-even="'even'" ng-class-odd="'odd'">
+					{{ $index + 1 }} - {{ album.title }} ({{ album.date }})
 				</li>
 			</ul>
 		</div>
