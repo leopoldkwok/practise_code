@@ -14,7 +14,7 @@
 		 		There are {{ albums.length }} albums available to view.
 		 	</p>
 			<ul>
-				<li ng-repeat="album in albums">
+				<li ng-repeat="album in albums | filter:'thailand' ">
 					{{ album.title }} ({{ album.date }})
 				</li>
 			</ul>
