@@ -1,16 +1,9 @@
 <html ng-app>
 <head>
+	<link rel="stylesheet" href="css/app.css">
 	<link rel="stylesheet" href="css/bootstrap.css">
 	<script type="text/javascript" src="angular.min.js"></script>
 	<script type="text/javascript" src="bootstrap.min.js"></script>
-	<style type="text/css">
-	.even {
-		color: red;
-	}
-	.odd {
-		color: blue;
-	}
-	</style>
 </head>
 <body style="padding: 50px">
 		<div ng-init="albums = [ { name:'madrid1309', title: 'Weekend in Madrid', date: '2013-09-01', description: 'Fun weekend visting the Capitol of Spain'},
@@ -18,15 +11,22 @@
 		 						 { name: 'thailand1210', title: 'Sun and fun in Thailand', date: '2012-10-15', description: 'We ate entirely too much Thai food and had a great time at the beach'},
 		 						 { name: 'australia1207', title: 'A wedding in Melbourne', date: '2012-07-20', description: 'We went to visit our friends for their wedding in Australia' } ]">
 			
-		 	<p><input type="text" ng-model="searchFor" size="30"/></p>
+		 	<p><input placeholder="type to search..." type="text" ng-model="searchFor" size="30"/></p>
 		 	<p>
-		 		There are {{ albums.length }} albums available to view.
+		 		There are {{ albums.length }} albums available to view:
 		 	</p>
-			<ul>
-				<li ng-repeat="album in albums | filter:searchFor | orderBy: 'date'" ng-class-even="'even'" ng-class-odd="'odd'">
-					{{ $index + 1 }} - {{ album.title }} ({{ album.date }})
-				</li>
-			</ul>
+		 	<div class="album panel panel-primary" ng-repeat="album in albums | filter:{ title: searchFor } | orderBy: 'date'" >
+		 		
+
+		 	<!-- Default panel contents -->
+		 		<div class="panel-heading">
+		 			<div style="float: right">{{ album.date }} </div>
+		 			{{ album.title }} 
+		 		</div>
+		 		<div class="description">
+					{{ album.description }}
+				</div>
+			</div>
 		</div>
 	</body>
 </html>
