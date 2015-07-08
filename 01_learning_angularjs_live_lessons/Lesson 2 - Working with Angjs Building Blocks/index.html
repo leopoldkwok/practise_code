@@ -12,9 +12,7 @@
 		 		There are {{ albums.length }} albums available to view:
 		 	</p>
 		 	<div class="album panel panel-primary" ng-repeat="album in albums | filter:{ title: searchFor } | orderBy: 'date'" >
-		 		
-
-		 	<!-- Default panel contents -->
+		 		<!-- Default panel contents -->
 		 		<div class="panel-heading">
 		 			<div style="float: right">{{ album.date }} </div>
 		 			{{ album.title }} 
@@ -23,13 +21,44 @@
 					{{ album.description }}
 				</div>
 			</div>
+
+			<div style="clear: left"></div>
+
+			<h3>Add New Album</h3>
+			<div class="album panel panel-default">
+		 		<!-- Default panel contents -->
+		 		<div class="panel-heading">
+		 			<div style="float: right">
+		 				<input type="text" placeholder="yyyy/mm/dd" size="10" ng-model="adding_album.date"/>
+		 			</div>
+		 				<input type="text" placeholder="Title..." size="20" ng-model="adding_album.title"/>
+		 		</div>
+		 		<div class="description">
+		 		<p>
+					<textarea ng-model="adding_album.description" placeholder="Description..." rows="4" style="width: 100%"></textarea>
+				</p>
+				<p>
+					<input type="text" ng-model="adding_album.name" style="width: 100%"/>
+				</p>
+				<p>
+					<button ng-click="addAlbum(adding_album)" type="button" class="btn btn-success">Add New Album</button>
+				</p>
+				</div>
+			</div>
 		</div>
+
 		<script type="text/javascript">
 			function AlbumListController($scope) {
+				$scope.adding_album = {};
 				$scope.albums = [ { name:'madrid1309', title: 'Weekend in Madrid', date: '2013-09-01', description: 'Fun weekend visting the Capitol of Spain'},
 		 						 { name: 'iceland1404', title: 'A holiday in Iceland', date: '2014-04-10', description: 'Oh boy it\s really cold in Iceland!!!'},
 		 						 { name: 'thailand1210', title: 'Sun and fun in Thailand', date: '2012-10-15', description: 'We ate entirely too much Thai food and had a great time at the beach'},
 		 						 { name: 'australia1207', title: 'A wedding in Melbourne', date: '2012-07-20', description: 'We went to visit our friends for their wedding in Australia' } ];
+
+		 		$scope.addAlbum = function (new_album) {
+		 			$scope.albums.push(new_album);
+		 			$scope.adding_album ={};
+		 		};
 			}
 		</script>
 	</body>
