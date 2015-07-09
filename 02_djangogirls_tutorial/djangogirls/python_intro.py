@@ -21,6 +21,8 @@
 
 # hi()
 
+# loops
+
 # def hi(name):
 #     if name == 'Ola':
 #         print('Hi Ola!')
