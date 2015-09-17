@@ -1,0 +1,17 @@
+<html ng-app>
+<head>
+	<link rel="stylesheet" href="css/bootstrap.css">
+	<script type="text/javascript" src="angular.min.js"></script>
+	<script type="text/javascript" src="bootstrap.min.js"></script>
+</head>
+<body style="padding: 50px">
+	<body>
+		<div class="alert alert-info" ng-init="greeting = { greeter: 'Marc', message: 'Hello World!!'}">
+			<p>
+				<input type="text" ng-model="greeting.greeter" size="20"/><br/>
+				<input type="text" ng-model="greeting.message" size="20"/>
+			</p>
+			{{ greeting.greeter }} says: "Everybody wanna shout "{{ greeting.message }}"
+		</div>
+	</body>
+</html>
