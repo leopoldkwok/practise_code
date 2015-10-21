@@ -8,9 +8,12 @@ angular.module("tutorialCtrlModule",[])
 
 	$scope.tutorialObject.bindOutput = 2;
 
+	$scope.tutorialObject.firstname = "Thomas";
+	$scope.tutorialObject.lastname = "Brown";
+
 	$scope.timesTwo = function() {
 		$scope.tutorialObject.bindOutput *=2;
 	}
-	
+
 	// our programing work is done
 }]);
