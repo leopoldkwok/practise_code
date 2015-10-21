@@ -16,4 +16,11 @@ angular.module("tutorialCtrlModule",[])
 	}
 
 	// our programing work is done
-}]);
+}])
+
+.directive("tbWelcomeMessage", function() {
+	return {
+		restrict:"AE", 
+		template: "<div>Howdy how are you?</div>"
+	}
+});
