@@ -1,2 +1,2 @@
 
-var app = angular.module('groceryList',[]);
+var app = angular.module('tutorialApp',["tutorialCtrl"]);
