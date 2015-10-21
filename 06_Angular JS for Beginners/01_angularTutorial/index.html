@@ -10,12 +10,15 @@
 <body>
 
 <div ng-controller="TutorialCtrl">
+<hr />
 
-</div>
-<ul ng-controller="ulCtrl">
-	<li>
+<h1>{{ tutorialObject.title }}</h1>
+<h2>{{ tutorialObject.subTitle }}</h2>
 
-	</li>
-</ul>
+<p>Number: {{ 2 + 2 }}</p>
+<p>String: {{"Thomas" + " " + "Brown"}}</p>
+<p><b>Binding: {{tutorialObject.bindOutput}} </b></p>
+
+<button ng-click="timesTwo()">Multiply</button>
 </body>
 </html>
