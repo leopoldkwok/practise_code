@@ -1,2 +1,2 @@
 
-var app = angular.module('tutorialApp',["tutorialCtrl"]);
+var app = angular.module('tutorialApp',["tutorialCtrlModule"]);

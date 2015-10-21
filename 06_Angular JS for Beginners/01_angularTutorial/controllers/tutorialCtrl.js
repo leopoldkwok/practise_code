@@ -1,5 +1,8 @@
-angular.module("tutorialCtrl",[])
+angular.module("tutorialCtrlModule",[])
 
-.controller();
+.controller("TutorialCtrl",["$scope", function($scope) {
 
-.service();
+
+	$scope.name = "thomas";
+	// our programing work is done
+}]);
