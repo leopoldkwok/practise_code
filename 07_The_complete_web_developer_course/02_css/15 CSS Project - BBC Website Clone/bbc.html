@@ -36,11 +36,10 @@
 
     #signindiv {
         font-weight: bold;
+        padding: 6px 80px 12px 20px;
         font-size: 0.9em;
+        float: left;
         border-right: 1px solid #990000;
-        width: 200px;
-        height: 100%;
-
     }
 
     #signindiv img {
@@ -48,9 +47,42 @@
         top: 3px;
     }
 
-    #signindiv p {
-        margin-left: 20px;
+    #topmenudiv {
+        float: left;
     }
+
+    #topmenudiv ul {
+        margin: 0;
+        padding: 0;
+    }
+
+    #topmenudiv li {
+        list-style: none;
+        font-weight: bold;
+        font-size: 0.9em;
+        border-right: 1px solid #990000;
+        height: 100%;
+        padding: 10px 20px 12px 20px;
+        float: left;
+
+    }
+
+    #searchdiv {
+        float: left;
+        padding: 5px 0 0 10px;
+    }
+
+    #searchdiv input {
+        height: 25px;
+        border: none;
+        font-size: 0.9em;
+        padding-left: 10px;
+        background-image:url("images/orb-search-dark.png");
+        background-repeat: no-repeat;
+        background-position:right center;
+     
+    }
+
     </style> 
 
 </head>
@@ -71,9 +103,30 @@
 
             <div id="signindiv">
 
-                <p><img src="images/bbcid_orb_signin_dark.png" /> Sign In</p>
+                <img src="images/bbcid_orb_signin_dark.png" /> Sign In
 
             </div>
+
+            <div id="topmenudiv">
+
+                <ul>
+
+                    <li>News</li>
+                    <li>Sport</li>
+                    <li>Weather</li>
+                    <li>iPlayer</li>
+                    <li>TV</li>
+                    <li>Radio</li>
+                    <li>More...</li>
+
+                </ul>
+
+            </div>
+
+            <div id="searchdiv">
+                <input type="text" placeholder="Search" />
+            </div>
+
 
 
         </div>
