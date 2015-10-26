@@ -85,7 +85,7 @@
         clear:both;
     }
 
-     #newsbar {
+    #newsbar {
         background-color: #990200;
         width: 100%;
         height: 90px;
@@ -148,6 +148,64 @@
         position: relative;
         top: -4px;
         padding-top:4px !important;
+    }
+
+    #content {
+        width: 100%;
+        color: #535353;
+        font-size: 0.75em;
+    }
+
+    .date {
+        font-weight: bold;
+    }
+
+    h1 {
+        color: #1F4F82;
+        font-size: 2.5em;
+    }
+
+    .headlineimage {
+        float: left;
+    }
+
+    .newsitem {
+        position:relative;
+        left: 10px;
+        top: -15px;
+        width: 280px;
+        float: left;
+        font-size: 1.1em;
+
+    }
+
+    .newsitem a {
+        color: #1F4F82;
+        text-decoration: none;
+    }
+
+    .newsitem a:hover {
+        text-decoration: underline;
+    }
+
+    .video {
+        background-image:url("images/triangle.png");
+        background-repeat: no-repeat;
+        background-position:left center;
+        padding-left: 35px;
+
+    }
+
+    .links {
+        line-height: 1.6em;
+    }
+
+     .sound {
+        background-image:url("images/sound.png");
+        background-repeat: no-repeat;
+        background-position:left center;
+        padding-left: 35px;
+
     }
 
     </style> 
@@ -246,9 +304,46 @@
                     </ul>
 
                 </div>
+
+            </div>
+
+
+        </div>
+
+        <div class="break"></div>
+
+        <div id="content">
+
+            <div class="fixedwidth">
+
+                <p><span class="date">2 April 2014</span> Last updated at 15:23</p>
+
+                <h1>Pollution to spread across England</h1>
+
+                <img class="headlineimage" src="images/headlineimage.jpg" width=390px/>
+
+                <div class="newsitem">
+
+                    <p>Health warnings have been issued by the government as pollution spreading across England is forecast to hit high levels.</p>
+
+                    <p class="links"><a class="video" href="">Why are pollution levels so high?</a><br />
+
+                    <a class="video" href="">Saharan dust visible on cars</a><br />
+
+                    <a class="video" href="">How Saharan dust reached the UK What will pollution do to us?</a><br /> 
+
+                    <a class="sound" href="">Air pollution a 'serious issue'</a>
+
+                    </p>
+
+
+                </div>
+
             </div>
 
         </div>
+
+
 
     </div>
 
