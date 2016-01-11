@@ -7,6 +7,8 @@
 
 			var scores = [60, 50, 60, 58, 54, 54, 58, 50, 52, 54, 48, 69, 34, 55, 51, 52, 44, 51, 69, 64, 66, 55, 52, 61, 46, 31, 57, 52, 44, 18, 41, 53, 55, 61, 51, 44];
 
+			var costs = [.25, .27, .25, .25, .25, .25, .33, .31, .25, .29, .27, .22, .31, .25, .25, .33, .21, .25, .25, .25, .28, .25, .24, .22, .20, .25, .30, .25, .24, .25, .25, .25, .27, .25, .26, .29];
+
 			function printAndGetHighScore(scores) { // Here's our new function, all ready to use.
 
 				var highScore = 0;
@@ -51,6 +53,36 @@
 
 			}
 
+			// The getMostCostEffectiveSolution takes the array of scores, the array of costs, and the high score.
+			function getMostCostEffectiveSolution(scores, costs, highScore) {
+
+				var cost = 100; //We’ll keep track of the lowest cost solution in cost..
+				// We start cost at a high number, and we’ll lower it each time we find a lower cost solution (with a high score).
+
+				var index; // .. and the index of the lowest cost solution in index
+
+				for (var i = 0; i < scores.length; i++) { // We iterate through the scores array like before...
+
+					if (scores[i] == highScore) {
+
+						if (cost > costs[i]) { // and check to see if the score has the high score
+
+							index = i;
+
+							// If it does, then we can check its cost. If the current cost is greater than the solution’s cost, then we’ve found a lower cost solution, so we’ll make sure we keep track of which solution it is (its index in the array) and store its cost in the cost variable as the lowest cost we’ve seen so far.
+
+							cost = costs[i];
+						}
+					}
+
+				}
+
+				return index;
+				//Once the loop is complete, the index of solution with the lowest cost is stored in index, so we return that to the code that called the function.
+			}
+
+
+
 			// And now we just call the function, passing in the scores array. We assign the value it returns to the variable highScore.
 			var highScore = printAndGetHighScore(scores);
 
@@ -62,6 +94,10 @@
 
 			console.log("Solutions with the highest score: " + bestSolutions);
 			// And finally, we can display the bubble solutions with the highest scores. Notice we’re using console.log to display the bestSolutions array. We could create another loop to display the array items one by one, but, luckily, console.log will do this for us (and, if you look at the output, it also adds commas between the array values!).
+
+			var mostCostEffective = getMostCostEffectiveSolution(scores, costs, highScore);
+
+			console.log("Bubble Solution #" + mostCostEffective + " is the most cost effective")
 
 		</script>
 	</head>
