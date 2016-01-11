@@ -29,6 +29,20 @@
 
 			console.log("Highest bubble score: " + highScore);
 
+			var bestSolutions = [];
+
+			// Each time through the loop, we compare the score at index i with the highScore and if they are equal, then we add that index to the bestSolutions array using push.
+
+			for(var i =0; i < scores.length; i++) {
+				if (scores[i] == highScore) {
+
+					bestSolutions.push(i);
+				}
+			}
+
+			console.log("Solutions with the highest score: " + bestSolutions);
+			// And finally, we can display the bubble solutions with the highest scores. Notice we’re using console.log to display the bestSolutions array. We could create another loop to display the array items one by one, but, luckily, console.log will do this for us (and, if you look at the output, it also adds commas between the array values!).
+
 		</script>
 	</head>
 	<body>
