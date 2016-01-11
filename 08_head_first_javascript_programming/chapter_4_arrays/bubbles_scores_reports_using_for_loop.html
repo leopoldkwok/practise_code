@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<title>Bubbles Scores Reports</title>
+		<meta charset="utf-8">
+		<script>
+
+			var scores = [60, 50, 60, 58, 54, 54, 58, 50, 52, 54, 48, 69, 34, 55, 51, 52, 44, 51, 69, 64, 66, 55, 52, 61, 46, 31, 57, 52, 44, 18, 41, 53, 55, 61, 51, 44];
+
+			var output; // We're using this variable in the loop below to create a string to output
+
+			//Using a For Loop
+
+			for (var i =0; i < scores.length; i = i + 1) { // and keep looping while our index is less than the length of the array
+
+				output = "Bubble solution #" + i + " score: " + scores[i]; // then create a string to use as a line of output that includes the bubble solution number (which is just the array index) and the score
+
+				console.log(output); // Then we'll use console.log to output the string
+
+			}
+
+		</script>
+	</head>
+	<body>
+		<h1>Bubble Scores Reports</h1>
+	</body>
+</html>
