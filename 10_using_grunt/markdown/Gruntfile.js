@@ -14,6 +14,26 @@ module.exports = function(grunt) {
 		}
 	});
 
+	grunt.loadNpmTasks('grunt-contrib-watch');
+
+	grunt.config('watch', {
+		scripts: {
+			files: ['coffeescripts/**/*.coffee'],
+			tasks: ['coffee', 'concat:scripts', 'uglify'],
+
+			options: {
+				spawn: false
+			}
+		},
+		styles: {
+			files: ['sass/**/*.scss'],
+			tasks: ['sass', 'cssmin'],
+			options: {
+				spawn: false
+			}
+		},
+	});
+
 	grunt.loadNpmTasks('grunt-contrib-concat');
 	grunt.config('concat', {
 		scripts: {
