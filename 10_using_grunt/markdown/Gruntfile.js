@@ -32,6 +32,12 @@ module.exports = function(grunt) {
 				spawn: false
 			}
 		},
+		interface: { // Refreshing the Browser Automatically
+			files:['index.html']
+		},
+		options: {
+			livereload: true
+		}
 	});
 
 	grunt.loadNpmTasks('grunt-contrib-concat');
