@@ -1,0 +1,16 @@
+// The filename starts with an underscore because it’s a “partial” file, which is meant to be pulled into another Sass file.
+
+@mixin row {
+	box-sizing: border-box;
+	overflow: hidden;
+	position: absolute;
+	left: 0;
+	right: 0;
+}
+
+@mixin col {
+	overflow: hidden;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+}
