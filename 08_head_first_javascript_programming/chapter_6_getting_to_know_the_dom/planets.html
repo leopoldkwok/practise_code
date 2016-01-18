@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Planets</title>
+	<style>
+	.redtext {
+		color: red;
+	}
+	</style>
+	<script>
+		// And to review: we’re getting the greenplanet element, and stashing the value in the planet variable.
+		// Then we’re changing the content of the element, and finally adding a class attribute that will turn the text of the element red.
+		function init() {
+			var planet = document.getElementById("greenplanet");
+			planet.innerHTML = "Red Alert: hit by phaser fire!";
+			planet.setAttribute("class", "redtext");
+		}
+
+		window.onload = init; // We’re calling the init function only when the page is fully loaded!
+	</script>
+</head>
+<body>
+	<h1>Green Planet</h1>
+	<p id="greenplanet">All is well</p>
+	<h1>Red Planet</h1>
+	<p id="redplanet">Nothing to report</p>
+	<h1>Blue Planet</h1>
+	<p id="blueplanet">All systems A-OK</p>
+</body>
+</html>
