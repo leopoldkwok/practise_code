@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Battleship</title>
+		<style>
+			body {
+				background-color: black;
+			}
+
+			/*We want the game board to stay in the middle of the page, so we’re setting the width to 1024px (the width of the game board), and the margins to auto.*/
+			div#board {
+				position: relative;
+				width: 1024px;
+				height: 863px;
+				margin: auto;
+				background: url("board.jpg") no-repeat;
+			/*	Here’s where we add the “board.jpg” image to the page, as the background of the “board” <div> element. We’re positioning
+				this <div> relative, so that we can position the table we add in the next step relative to this <div>.*/
+			}
+		</style>
+	</head>
+	<body>
+		<div id="board"> <!-- We’re going to put the table for the game board and the form for getting user input here. -->
+
+		</div>
+		<script src="battleship.js"></script> <!-- We’ll put our code in the file “battleship.js”. -->
+	</body>
+</html>
