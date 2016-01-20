@@ -9,14 +9,57 @@
 			}
 
 			/*We want the game board to stay in the middle of the page, so we’re setting the width to 1024px (the width of the game board), and the margins to auto.*/
+			/*The “board” <div> is positioned relative, so everything nested within this <div> can be positioned relative to it.*/
 			div#board {
 				position: relative;
 				width: 1024px;
 				height: 863px;
 				margin: auto;
 				background: url("board.jpg") no-repeat;
+			}
 			/*	Here’s where we add the “board.jpg” image to the page, as the background of the “board” <div> element. We’re positioning
 				this <div> relative, so that we can position the table we add in the next step relative to this <div>.*/
+
+
+			/* We're positioning the message area at the top left of the board.*/
+			/*The messageArea <div> is nested inside the board <div>, so its position is specified relative to the
+			board <div>. So it will be positioned 0px from the top and 0px from the left of the top left corner of the board <div>.*/
+			div#messageArea {
+				position: relative;
+				top: 0px;
+				left: 0px;
+				color: rgb(83,175,19);
+			}
+
+			/*We position the <table> 173 pixels from the left of the board and 98 pixels from the top, so it aligns with the grid in the background image.*/
+			table {
+				position: absolute;
+				left: 173px;
+				top: 98px;
+				border-spacing: 0px;
+			}
+
+			/*Each <td> gets a specific width and height so that the cells of the <table> match up with the cells of the grid.*/
+			td {
+				width: 94px;
+				height: 94px;
+			}
+
+			/*We’re placing the <form> at the bottom right of the board. It obscures the bottom right numbers a bit, but that’s okay (you know what they are).
+			We’re also giving the <form> a nice green color to match the background image.*/
+			form {
+				position: absolute;
+				bottom: 0px;
+				right: 0px;
+				padding: 15px;
+				background-color: rgb(83, 175, 19);
+			}
+			/*And finally, a bit of styling on the two <input> elements so they fit in with the
+			game theme, and we’re done!*/
+			form input {
+				background-color: rgb(152, 207, 113);
+				border-color: rgb(83, 175, 19);
+				font-size: 1em;
 			}
 		</style>
 	</head>
@@ -51,6 +94,7 @@
 				</tr>
 			</table>
 			<form>
+				<!-- The <form> has two inputs: one for the guess (a text input) and one for the button. Note the ids on these elements. We’ll need them later when we write the code to get the player’s guess. -->
 				<input type="text" id="guessInput" placeholder="A0">
 				<input type ="button" id="fireButton" value="Fire!">
 			</form>
