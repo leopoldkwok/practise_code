@@ -28,3 +28,39 @@ view.displayMiss("25");	// C5
 view.displayHit("26");	// C6
 
 view.displayMessage("Tap tap, is this thing on?");
+
+
+
+
+// Each ship is an object
+// Note that we've converted the ship locations to two numbers, using 0 for A, 1 for B, and so on.
+
+var model = {
+
+	// 	These three properties keep us from hardcoding values. They are: boardSize (the size of the grid used for the
+	// board), numShips (the number of ships in the game), and shipLength (the number of locations in each ship, 3).
+
+	boardSize: 7,
+	numShips: 3,
+	shipLength: 3,
+	shipsSunk: 0,
+
+	// The ship has a locations property and a hits property.
+
+	// The hits property is also an array that holds whether or not a ship is hit at each location. We'll set the array items to the empty string initially,
+
+	// and change each item to “hit" when the ship has taken a hit in the corresponding location.
+
+	// And, rather than managing three different variables to hold the ships,
+	// we’ll create a single array variable to hold them all, like this:
+
+	ships = [{ locations: ["10", "20", "30"], hits: ["", "", ""]}, // first ship.
+			 { locations: ["32", "33", "34"], hits: ["", "", ""]}, // second ship
+			 { locations: ["63", "64", "65"], hits: ["", "", "hit"]}; // third ship
+
+};
+
+
+
+
+
