@@ -20,14 +20,14 @@ var view = {
 // Remember, displayHit and displayMiss take a location in the board that's already been converted from a letter and a
 // number to a string with two numbers that corresponds to an id of one of the table cells.
 
-view.displayMiss("00"); // A0
-view.displayHit("34"); 	// D4
-view.displayMiss("55");	// F5
-view.displayHit("12");	// B2
-view.displayMiss("25");	// C5
-view.displayHit("26");	// C6
+// view.displayMiss("00"); // A0
+// view.displayHit("34"); 	// D4
+// view.displayMiss("55");	// F5
+// view.displayHit("12");	// B2
+// view.displayMiss("25");	// C5
+// view.displayHit("26");	// C6
 
-view.displayMessage("Tap tap, is this thing on?");
+// view.displayMessage("Tap tap, is this thing on?");
 
 
 
@@ -35,6 +35,7 @@ view.displayMessage("Tap tap, is this thing on?");
 // Each ship is an object
 // Note that we've converted the ship locations to two numbers, using 0 for A, 1 for B, and so on.
 
+// The model maintains the state of the game, and has the logic to test guesses for hits and misses.
 var model = {
 
 	// 	These three properties keep us from hardcoding values. They are: boardSize (the size of the grid used for the
@@ -54,9 +55,9 @@ var model = {
 	// And, rather than managing three different variables to hold the ships,
 	// we’ll create a single array variable to hold them all, like this:
 
-	ships = [{ locations: ["10", "20", "30"], hits: ["", "", ""]}, // first ship.
+	ships: [{ locations: ["10", "20", "30"], hits: ["", "", ""]}, // first ship.
 			 { locations: ["32", "33", "34"], hits: ["", "", ""]}, // second ship
-			 { locations: ["63", "64", "65"], hits: ["", "", "hit"]}], // third ship
+			 { locations: ["63", "64", "65"], hits: ["", "", ""]}], // third ship
 
 	// The method accepts a guess.
 
@@ -64,13 +65,44 @@ var model = {
 
 		for (var i =0; i < this.numShips; i++) { // Then, we iterate through the array of ships, examining one ship at a time.
 			var ship = this.ships[i]; // Here we have our hands on a ship. We need to see if the guess matches any of its locations.
+			// And we've accessed the ship's set of locations. Remember this is a property of the ship that contains an array.
+			var index = ship.locations.indexOf(guess); // The indexOf method searches an array for a matching value and returns its index, or -1 if it can't find it.
+			if (index >=0) { // So if we get an index greater than or equal to zero, the user's guess is in the location's array, and we have a hit.
+
+				// we have a hit!
+				ship.hits[index] = "hit"; // So mark the hits array at the same index.
+				view.displayHit(guess); //Notify the view that we got a hit at the location in guess
+				view.displayMessage("HIT!"); // And ask the view to display the message “HIT!”.
+				if (this.isSunk(ship)) {
+					view.displayMessage("you sank my battleship!"); // Let the player know that this hit sank the battleship!
+					this.shipsSunk++;
+				}
+				return true; // Oh, and we need to return true because we had a hit.
+			}
+
 		}
+		view.displayMiss(guess); // Notify the view that we got a miss at the location in guess.
+		view.displayMessage("You missed."); //and ask the view to display the message “You missed.”.
+		return false; //Otherwise, if we make it through all the ships and don't have a hit, it's a miss, so we return false.
+	},
+	isSunk: function(ship) {
+		for(var i =0; i < this.shipLength; i++) {
+			if (ship.hits[i] !== "hit") {
+				return false;
+			}
+		}
+		return true;
 	}
 };
 
-
-
-
-
-
-
+model.fire("00");
+model.fire("53");
+model.fire("06");
+model.fire("16");
+model.fire("26");
+model.fire("34");
+model.fire("24");
+model.fire("44");
+model.fire("12");
+model.fire("11");
+model.fire("10");
