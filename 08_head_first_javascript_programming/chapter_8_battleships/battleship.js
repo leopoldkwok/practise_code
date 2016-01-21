@@ -56,9 +56,19 @@ var model = {
 
 	ships = [{ locations: ["10", "20", "30"], hits: ["", "", ""]}, // first ship.
 			 { locations: ["32", "33", "34"], hits: ["", "", ""]}, // second ship
-			 { locations: ["63", "64", "65"], hits: ["", "", "hit"]}; // third ship
+			 { locations: ["63", "64", "65"], hits: ["", "", "hit"]}], // third ship
 
+	// The method accepts a guess.
+
+	fire: function(guess) {
+
+		for (var i =0; i < this.numShips; i++) { // Then, we iterate through the array of ships, examining one ship at a time.
+			var ship = this.ships[i]; // Here we have our hands on a ship. We need to see if the guess matches any of its locations.
+		}
+	}
 };
+
+
 
 
 
