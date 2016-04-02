@@ -11,14 +11,30 @@
 # 	puts "We're in the block! Its a block party" # The block. It will be stored in the "my_block" parameter
 # end
 
-def twice(&my_block)
-	puts "In the method, about to call the block!"
-	my_block.call # call the block
-	puts "Back in the method, about to call the block again!"
-	my_block.call # Call the block AGAIN
-	puts "Back in the method, about to return!"
+# def twice(&my_block)
+# 	puts "In the method, about to call the block!"
+# 	my_block.call # call the block
+# 	puts "Back in the method, about to call the block again!"
+# 	my_block.call # Call the block AGAIN
+# 	puts "Back in the method, about to return!"
+# end
+
+# twice do
+# 	puts "Wooo!"
+# end
+
+
+# def give(&my_block)
+# 	my_block.call("2 turtle doves", "1 partridge")
+# end
+
+# functionality equivalent
+def give(&my_block)
+	yield("2 turtle doves", "1 partridge")
 end
 
-twice do
-	puts "Wooo!"
+
+give do |present1, present2| # If there are multiple parameters, separate them with commas.
+	puts "My method gave to me..."
+	puts present1, present2
 end
