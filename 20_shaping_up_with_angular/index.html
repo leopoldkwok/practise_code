@@ -1,18 +1,27 @@
 <!DOCTYPE html>
 <html ng-app="store">
+	<meta charset="utf-8" />
+	<title>AngularJs</title>
 	<head>
 		<!-- Latest compiled and minified CSS -->
 		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+
+		<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+		<script src="app.js"></script>
 	</head>
-<body>
 
-</body>
-	<div ng-controller="StoreController as store">
-		<h1> {{store.product.name}} </h1>
-		<h2> ${{store.product.price}} </h2>
-		<p> {{store.product.description}} </p>
+
+<body ng-controller="StoreController as store">
+	<!-- Products Container -->
+	<div ng-repeat="product in store.products" ng-hide="store.product.soldOut" class="list-group" >
+		<!-- Product Container -->
+		<div class="list-group-item">
+			<h1> {{product.name}} </h1>
+			<h2> ${{product.price}} </h2>
+			<p> {{product.description}} </p>
+			<button ng-show="product.canPurchase"> Add to Cart</button>
+		</div>
 	</div>
+</body >
 
-	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
-	<script type="text/javascript" src="app.js"></script>
 </html>
