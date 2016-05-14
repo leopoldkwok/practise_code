@@ -10,7 +10,11 @@ $(function() {
     body: ko.observable("World")
   };
   var viewModel = {
-    documents: ko.observableArray()
+    documents: ko.observableArray(),
+    selectedItem:ko.observable(),
+    editItem: function(doc) {
+      viewModel.selectedItem(doc);
+    }
   };
   viewModel.documents.push(doc1);
   viewModel.documents.push(doc2);
