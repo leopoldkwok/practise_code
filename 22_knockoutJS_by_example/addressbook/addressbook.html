@@ -1,0 +1,20 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html" />
+    <title><!-- add title --></title>
+    <!-- the jquery library -->
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+    <!-- the knockout library -->
+    <script type="text/javascript" src="knockout-3.4.0.js"></script>
+    <!-- module for our application -->
+    <script type="text/javascript" src="addressbook.js"></script>
+  </head>
+  <body>
+    <!-- add body content -->
+    <p>Name <input type="text" data-bind="value: AddressBook.contact.name" /></p>
+
+<p>Phone Number <input type="text" data-bind="value: AddressBook.contact.phoneNumber" /></p>
+<p><button data-bind="click: AddressBook.addContact">Add</button></p>
+  </body>
+</html>
