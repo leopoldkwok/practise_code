@@ -16,6 +16,13 @@
       <div class="page-header">
         <h1>My ToDo List</h1>
       </div>
+      <div class="row">
+        <div class="col-md-12">
+        Name <input type="text" data-bind="value: ToDoList.task.name" />
+        Description <input type="text" data-bind="value: ToDoList.task.description"/>
+        <button class="btn btn-primary" data-bind="click: ToDoList.addTask">Add</button>
+        </div>
+      </div>
     </div>
   </body>
 </html>
