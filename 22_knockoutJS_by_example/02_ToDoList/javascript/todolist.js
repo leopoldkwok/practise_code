@@ -20,6 +20,13 @@ var ToDoList = function () {
   clearTask();
   };
 
+  // method to delete task to tasks array
+  var deleteTask = function(task) {
+    console.log("Deleting task with name: " + task.name);
+    // remove the task from the tasks array
+    tasks.remove(task);
+  }
+
   /* method to clear the task */
   var clearTask = function() {
     task.name(null);
@@ -38,8 +45,7 @@ var ToDoList = function () {
   /* add members that will be exposed publicly */
   tasks: tasks,
   task: task,
-  addTask: addTask
-
-
+  addTask: addTask,
+  deleteTask: deleteTask
   };
 }();
