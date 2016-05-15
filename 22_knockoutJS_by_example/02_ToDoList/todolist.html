@@ -23,6 +23,20 @@
         <button class="btn btn-primary" data-bind="click: ToDoList.addTask">Add</button>
         </div>
       </div>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Description</th>
+          </tr>
+        </thead>
+        <tbody data-bind="foreach: ToDoList.tasks">
+          <tr>
+            <td data-bind="text: name"></td>
+            <td data-bind="text: description"></td>
+          </tr>
+        </tbody>
+      </table>
     </div>
   </body>
 </html>
