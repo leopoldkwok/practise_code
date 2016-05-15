@@ -32,6 +32,7 @@ var clearContact = function () {
   return {
   /* add members that will be exposed publicly */
   contact: contact,
+  contacts: contacts,
   addContact: addContact
-};
+  };
 }();
