@@ -3,6 +3,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html" />
     <title>knockout js addressbook</title>
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
     <!-- the jquery library -->
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
     <!-- the knockout library -->
@@ -11,24 +12,29 @@
     <script type="text/javascript" src="addressbook.js"></script>
   </head>
   <body>
-    <!-- add body content -->
-    <p>Name <input type="text" data-bind="value: AddressBook.contact.name" /></p>
-    <p>Phone Number <input type="text" data-bind="value: AddressBook.contact.phoneNumber" /></p>
-    <p><button data-bind="click: AddressBook.addContact">Add</button></p>
+    <div class="container">
+      <div class="page-header">
+        <h1>My Address Book</h1>
+      </div>
+      <!-- add body content -->
+      Name <input type="text" data-bind="value: AddressBook.contact.name" />
+      Phone Number <input type="text" data-bind="value: AddressBook.contact.phoneNumber" />
+      <button class="btn btn-primary" data-bind="click: AddressBook.addContact">Add</button>
 
-    <table>
-      <thead>
-        <tr>
-          <th>Name</th>
-          <th>Phone Number</th>
-        </tr>
-      </thead>
-      <tbody data-bind="foreach: AddressBook.contacts">
-        <tr>
-          <td data-bind="text: name"></td>
-          <td data-bind="text: phoneNumber"></td>
-        </tr>
-      </tbody>
-    </table>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Phone Number</th>
+          </tr>
+        </thead>
+        <tbody data-bind="foreach: AddressBook.contacts">
+          <tr>
+            <td data-bind="text: name"></td>
+            <td data-bind="text: phoneNumber"></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
   </body>
 </html>
