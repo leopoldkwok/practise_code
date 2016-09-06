@@ -1,0 +1,17 @@
+{
+  "name": "angular",
+  "homepage": "https://github.com/leopoldkwok/practise_code",
+  "authors": [
+    "leopoldkwok <leopoldkwok@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
