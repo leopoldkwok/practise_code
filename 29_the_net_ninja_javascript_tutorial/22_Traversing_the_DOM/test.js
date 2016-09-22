@@ -13,3 +13,7 @@ myH2
 myH2[0].innerHTML = "Yo NINJAS";
 
 document.getElementById("page-title");
+
+//getElementsByTagName() - returns an array of objects
+//getElementsByClassName() - returns an array of objects
+//getElementById() - returns a single object
